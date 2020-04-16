@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CF39D4A12448DE1100F6F6F7 /* ReminderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF39D4A02448DE1100F6F6F7 /* ReminderController.swift */; };
+		CF39D4A32448EF0800F6F6F7 /* reminderRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF39D4A22448EF0800F6F6F7 /* reminderRow.swift */; };
+		CF85B702244905BC004F4222 /* AddReminderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF85B701244905BC004F4222 /* AddReminderView.swift */; };
 		CFD0CFC42446502F00750E41 /* WatchWash WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = CFD0CFC32446502F00750E41 /* WatchWash WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		CFD0CFCA2446502F00750E41 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFD0CFC82446502F00750E41 /* Interface.storyboard */; };
 		CFD0CFCC2446503100750E41 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFD0CFCB2446503100750E41 /* Assets.xcassets */; };
@@ -62,6 +65,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		CF39D4A02448DE1100F6F6F7 /* ReminderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderController.swift; sourceTree = "<group>"; };
+		CF39D4A22448EF0800F6F6F7 /* reminderRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = reminderRow.swift; sourceTree = "<group>"; };
+		CF85B701244905BC004F4222 /* AddReminderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReminderView.swift; sourceTree = "<group>"; };
 		CFD0CFBF2446502F00750E41 /* WatchWash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WatchWash.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFD0CFC32446502F00750E41 /* WatchWash WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WatchWash WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFD0CFC92446502F00750E41 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
@@ -89,6 +95,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CF39D4A42448EF3C00F6F6F7 /* Reminders */ = {
+			isa = PBXGroup;
+			children = (
+				CF39D4A22448EF0800F6F6F7 /* reminderRow.swift */,
+				CF39D4A02448DE1100F6F6F7 /* ReminderController.swift */,
+				CF85B701244905BC004F4222 /* AddReminderView.swift */,
+			);
+			path = Reminders;
+			sourceTree = "<group>";
+		};
+		CF39D4A52448EF4B00F6F6F7 /* Timer */ = {
+			isa = PBXGroup;
+			children = (
+				CFD0CFF0244656EF00750E41 /* TimerController.swift */,
+			);
+			path = Timer;
+			sourceTree = "<group>";
+		};
 		CFD0CFB82446502F00750E41 = {
 			isa = PBXGroup;
 			children = (
@@ -122,7 +146,8 @@
 			isa = PBXGroup;
 			children = (
 				CFD0CFD72446503100750E41 /* InterfaceController.swift */,
-				CFD0CFF0244656EF00750E41 /* TimerController.swift */,
+				CF39D4A42448EF3C00F6F6F7 /* Reminders */,
+				CF39D4A52448EF4B00F6F6F7 /* Timer */,
 				CFD0CFD92446503100750E41 /* ExtensionDelegate.swift */,
 				CFD0CFDB2446503100750E41 /* NotificationController.swift */,
 				CFD0CFDD2446503100750E41 /* ComplicationController.swift */,
@@ -262,9 +287,12 @@
 			files = (
 				CFD0CFDC2446503100750E41 /* NotificationController.swift in Sources */,
 				CFD0CFDE2446503100750E41 /* ComplicationController.swift in Sources */,
+				CF85B702244905BC004F4222 /* AddReminderView.swift in Sources */,
 				CFD0CFF1244656EF00750E41 /* TimerController.swift in Sources */,
 				CFD0CFDA2446503100750E41 /* ExtensionDelegate.swift in Sources */,
+				CF39D4A32448EF0800F6F6F7 /* reminderRow.swift in Sources */,
 				CFD0CFD82446503100750E41 /* InterfaceController.swift in Sources */,
+				CF39D4A12448DE1100F6F6F7 /* ReminderController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -499,6 +527,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.analogpotato.WatchWash;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
+				WATCHOS_DEPLOYMENT_TARGET = 6.2;
 			};
 			name = Debug;
 		};
@@ -512,6 +541,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.analogpotato.WatchWash;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
+				WATCHOS_DEPLOYMENT_TARGET = 6.2;
 			};
 			name = Release;
 		};

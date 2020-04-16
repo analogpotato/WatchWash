@@ -16,13 +16,12 @@ class InterfaceController: WKInterfaceController {
     @IBOutlet weak var selectLabel: WKInterfaceLabel!
     
     var itemList: [(String, Int)] = [
-        ("Basic Wash", 25),
+        ("Basic Wash", 20),
         ("Full Wash", 30),
         ("Extra Wash", 45),
-        ("Deep Clean", 60),
-        ("Whoa There", 75) ]
+        ("Whoa There", 60)]
 
-    var pickerValue:Int = 25
+    var pickerValue:Int = 20
 
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
@@ -52,6 +51,9 @@ class InterfaceController: WKInterfaceController {
     override func contextForSegue(withIdentifier segueIdentifier: String) -> Any? {
         
         return pickerValue
+    }
+    @IBAction func menuReminder() {
+        pushController(withName: "reminderView", context: nil)
     }
     
     

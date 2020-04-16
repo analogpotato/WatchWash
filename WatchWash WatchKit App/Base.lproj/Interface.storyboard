@@ -6,6 +6,63 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="16012"/>
     </dependencies>
     <scenes>
+        <!--Add Reminder View-->
+        <scene sceneID="8Ik-VO-fqz">
+            <objects>
+                <controller id="Dci-Th-t3h" customClass="AddReminderView" customModule="WatchWash_WatchKit_Extension">
+                    <items>
+                        <group width="1" alignment="left" id="I0o-BL-2ck">
+                            <items>
+                                <picker width="80" height="100" alignment="center" verticalAlignment="center" focusStyle="stack" id="S8R-P7-KEn"/>
+                                <picker width="80" height="100" alignment="center" verticalAlignment="center" focusStyle="stack" id="psL-qj-V1Y"/>
+                            </items>
+                        </group>
+                        <button width="1" alignment="left" verticalAlignment="center" title="Save" id="rX5-D9-pmT">
+                            <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="hourPicker" destination="S8R-P7-KEn" id="nF0-6H-gnX"/>
+                        <outlet property="minutePicker" destination="psL-qj-V1Y" id="PDe-am-iR7"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="207.69565217391303" y="-294.46428571428572"/>
+        </scene>
+        <!--reminderView-->
+        <scene sceneID="JZv-9P-Fgk">
+            <objects>
+                <controller identifier="reminderView" id="2US-wS-Tiz" customClass="ReminderViewController" customModule="WatchWash_WatchKit_Extension">
+                    <items>
+                        <table alignment="left" id="9rL-nr-rQ3">
+                            <items>
+                                <tableRow identifier="reminderRow" id="Wd5-3H-AUD" customClass="reminderRow" customModule="WatchWash_WatchKit_Extension">
+                                    <group key="rootItem" width="1" alignment="left" id="wSa-7P-fW5">
+                                        <items>
+                                            <label width="136" alignment="left" verticalAlignment="center" text="Label" id="G6H-ma-LHe"/>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="reminderLabel" destination="G6H-ma-LHe" id="dKR-cv-mzP"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                        <button width="1" alignment="left" title="Add Reminder" id="SIu-oJ-Q2B">
+                            <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="addReminderPressed" destination="2US-wS-Tiz" id="OMy-Pd-Knx"/>
+                                <segue destination="Dci-Th-t3h" kind="modal" id="qeE-7n-DvZ"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="reminderTable" destination="9rL-nr-rQ3" id="Wm0-9H-pm7"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="-64" y="-294"/>
+        </scene>
         <!--Interface Controller-->
         <scene sceneID="aou-V4-d1y">
             <objects>
@@ -18,17 +75,27 @@
                             </connections>
                         </picker>
                         <button width="1" alignment="left" title="Start Washing!" id="fx4-rk-Frn">
+                            <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <segue destination="5Rw-Zn-92U" kind="push" identifier="timerSegue" id="iuh-Sx-FRb"/>
                             </connections>
                         </button>
                     </items>
+                    <menu key="menu" id="vQP-lo-bps">
+                        <items>
+                            <menuItem title="Reminder" icon="add" id="i8n-xD-Dys">
+                                <connections>
+                                    <action selector="menuReminder" destination="AgC-eL-Hgc" id="Izc-1g-qQa"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
                     <connections>
                         <outlet property="myPicker" destination="tyy-kh-fOo" id="PP0-T9-1V5"/>
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="201" y="64"/>
+            <point key="canvasLocation" x="-64" y="64"/>
         </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">
@@ -60,11 +127,12 @@
                 <controller id="5Rw-Zn-92U" customClass="TimerController" customModule="WatchWash_WatchKit_Extension">
                     <items>
                         <label alignment="center" id="J6f-ty-ga5"/>
-                        <timer height="103" alignment="center" format="short" previewedSeconds="25" id="sWe-xZ-cmW">
+                        <timer height="110" alignment="center" format="short" previewedSeconds="20" id="sWe-xZ-cmW">
                             <fontDescription key="font" style="UICTFontTextStyleTitle0"/>
                             <calendarUnit key="units" second="YES"/>
                         </timer>
                         <button width="1" alignment="left" title="All Done!" id="1rr-KO-v8U">
+                            <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <segue destination="AgC-eL-Hgc" kind="push" id="Rom-Rf-gUU"/>
                             </connections>
@@ -77,7 +145,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="409.47826086956519" y="63.75"/>
+            <point key="canvasLocation" x="208" y="64"/>
         </scene>
         <!--Notification Controller-->
         <scene sceneID="Niz-AI-uX2">
