@@ -126,11 +126,9 @@
             <objects>
                 <controller id="5Rw-Zn-92U" customClass="TimerController" customModule="WatchWash_WatchKit_Extension">
                     <items>
-                        <label alignment="center" id="J6f-ty-ga5"/>
-                        <group width="1" height="1" alignment="left" id="2h0-kG-gpR">
+                        <group width="1" height="1" alignment="center" verticalAlignment="center" id="2h0-kG-gpR">
                             <items>
-                                <spriteKitScene width="1" height="1" alignment="center" verticalAlignment="center" id="x1i-Mc-zRk"/>
-                                <timer height="39" alignment="center" verticalAlignment="center" format="short" previewedSeconds="20" id="sWe-xZ-cmW">
+                                <timer alignment="center" verticalAlignment="center" format="short" previewedSeconds="20" id="sWe-xZ-cmW">
                                     <fontDescription key="font" style="UICTFontTextStyleTitle0"/>
                                     <calendarUnit key="units" second="YES"/>
                                 </timer>
@@ -140,7 +138,6 @@
                     <connections>
                         <outlet property="countdownTimer" destination="sWe-xZ-cmW" id="4BO-zO-CUu"/>
                         <outlet property="timerGroup" destination="2h0-kG-gpR" id="Hcl-lD-STK"/>
-                        <outlet property="timerLabel" destination="J6f-ty-ga5" id="agM-IM-Z2V"/>
                     </connections>
                 </controller>
             </objects>

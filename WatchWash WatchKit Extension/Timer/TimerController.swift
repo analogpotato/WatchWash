@@ -14,14 +14,14 @@ class TimerController: WKInterfaceController {
 
 
     @IBOutlet weak var countdownTimer: WKInterfaceTimer!
-    @IBOutlet weak var timerLabel: WKInterfaceLabel!
+
 
     @IBOutlet weak var timerGroup: WKInterfaceGroup!
     
     
     let currentDate = Date()
-    let soapArray = ["Get some soap!","Prep phase","Lather up!", "Soapy, soap, soap","Wash in 3!"]
-    let sayingsArray = ["Wash those hands!", "Clean up!","Deep clean initiated", "Get under your fingernails","Water time!","Rinse, Lather, Repeat","You don't know where those hands have been"]
+//    let soapArray = ["Get some soap!","Prep phase","Lather up!", "Soapy, soap, soap","Wash in 3!"]
+//    let sayingsArray = ["Wash those hands!", "Clean up!","Deep clean initiated", "Get under your fingernails","Water time!","Rinse, Lather, Repeat","You don't know where those hands have been"]
     var isRunning = true
     
     var timer = Timer()
@@ -30,7 +30,7 @@ class TimerController: WKInterfaceController {
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
-
+        
         labelText = context as? TimeInterval
         let addedTime = context as? Double
         
@@ -49,15 +49,15 @@ class TimerController: WKInterfaceController {
     func firstTimer(){
         let interval:TimeInterval = 4.0
         
-//        timerGroup.setBackgroundImageNamed("initial")
-//        timerGroup.startAnimatingWithImages(in: NSRange(location:0, length: Int(interval) + 1), duration: interval, repeatCount: 1)
+        timerGroup.setBackgroundImageNamed("initial")
+        timerGroup.startAnimatingWithImages(in: NSRange(location:0, length: 120), duration: interval, repeatCount: 1)
         
 //        if let scene: SKScene = SKScene(fileNamed: "ProgressCirle.swift") {
 //
 //        }
         
         
-        timerLabel.setText(self.soapArray.randomElement())
+//        timerLabel.setText(self.soapArray.randomElement())
         
         let time = Date(timeIntervalSinceNow: interval)
         countdownTimer.setDate(time)
@@ -82,7 +82,13 @@ class TimerController: WKInterfaceController {
     
     func secondTimer() {
         
-                        self.timerLabel.setText(self.sayingsArray.randomElement())
+        let interval = Double(labelText!)
+        
+        
+                               timerGroup.setBackgroundImageNamed("progresscircle")
+timerGroup.startAnimatingWithImages(in: NSRange(location:0, length: 240), duration: interval, repeatCount: 1)
+        
+//        self.timerLabel.setText(self.sayingsArray.randomElement())
                         guard let timeInterval = labelText else {
                             return
             

@@ -13,6 +13,7 @@ import SpriteKit
 
 class RestScene: SKScene {
 
+    var timerDuration: TimeInterval = 3.0
 
     override func sceneDidLoad() {
 
