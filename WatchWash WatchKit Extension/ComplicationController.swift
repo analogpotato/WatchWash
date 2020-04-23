@@ -14,15 +14,23 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     // MARK: - Timeline Configuration
     
     func getSupportedTimeTravelDirections(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationTimeTravelDirections) -> Void) {
-        handler([.forward, .backward])
+        handler([.forward])
     }
     
     func getTimelineStartDate(for complication: CLKComplication, withHandler handler: @escaping (Date?) -> Void) {
-        handler(nil)
+        
+        let currentDate = Date()
+        
+        
+        handler(currentDate)
     }
     
     func getTimelineEndDate(for complication: CLKComplication, withHandler handler: @escaping (Date?) -> Void) {
-        handler(nil)
+        
+        let currentDate = Date()
+        let endDate = currentDate.addingTimeInterval(TimeInterval(4*60*60))
+        
+        handler(endDate)
     }
     
     func getPrivacyBehavior(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationPrivacyBehavior) -> Void) {
@@ -33,6 +41,16 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     
     func getCurrentTimelineEntry(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationTimelineEntry?) -> Void) {
         // Call the handler with the current timeline entry
+        
+        if complication.family == .modularSmall {
+            
+            let template = CLKComplicationTemplateModularSmallSimpleImage()
+            let image = UIImage(systemName: "stopwatch")
+            
+            template.imageProvider = CLKImageProvider(onePieceImage: image!)
+            
+        }
+        
         handler(nil)
     }
     
@@ -43,6 +61,12 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     
     func getTimelineEntries(for complication: CLKComplication, after date: Date, limit: Int, withHandler handler: @escaping ([CLKComplicationTimelineEntry]?) -> Void) {
         // Call the handler with the timeline entries after to the given date
+        
+        let template = CLKComplicationTemplateModularSmallSimpleImage()
+           let image = UIImage(systemName: "stopwatch")
+           
+           template.imageProvider = CLKImageProvider(onePieceImage: image!)
+        
         handler(nil)
     }
     
@@ -50,6 +74,13 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     
     func getLocalizableSampleTemplate(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationTemplate?) -> Void) {
         // This method will be called once per supported complication, and the results will be cached
+        
+        let template = CLKComplicationTemplateModularSmallSimpleImage()
+        let image = UIImage(systemName: "stopwatch")
+        
+        template.imageProvider = CLKImageProvider(onePieceImage: image!)
+        
+        
         handler(nil)
     }
     

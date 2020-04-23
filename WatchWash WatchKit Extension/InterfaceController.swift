@@ -49,9 +49,9 @@ class InterfaceController: WKInterfaceController {
     }
     
     override func contextForSegue(withIdentifier segueIdentifier: String) -> Any? {
-        
         return pickerValue
     }
+    
     @IBAction func menuReminder() {
         pushController(withName: "reminderView", context: nil)
     }

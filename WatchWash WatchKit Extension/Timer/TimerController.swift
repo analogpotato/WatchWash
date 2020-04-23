@@ -8,47 +8,90 @@
 
 import WatchKit
 import Foundation
+import SpriteKit
 
 class TimerController: WKInterfaceController {
 
 
     @IBOutlet weak var countdownTimer: WKInterfaceTimer!
     @IBOutlet weak var timerLabel: WKInterfaceLabel!
-    @IBOutlet weak var doneButton: WKInterfaceButton!
+
+    @IBOutlet weak var timerGroup: WKInterfaceGroup!
     
     
     let currentDate = Date()
     let soapArray = ["Get some soap!","Prep phase","Lather up!", "Soapy, soap, soap","Wash in 3!"]
     let sayingsArray = ["Wash those hands!", "Clean up!","Deep clean initiated", "Get under your fingernails","Water time!","Rinse, Lather, Repeat","You don't know where those hands have been"]
+    var isRunning = true
+    
+    var timer = Timer()
+    var labelText:TimeInterval?
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
-        doneButton.setHidden(true)
+        
+
+        labelText = context as? TimeInterval
+        let addedTime = context as? Double
         
         firstTimer()
         
-        
         DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-            if let label = context as? Int {
-                self.timerLabel.setText(self.sayingsArray.randomElement())
-                let timeInterval = Double(label)
-                let myDate = Date(timeIntervalSinceNow: timeInterval + 1)
-                self.countdownTimer.setDate(myDate)
-                self.countdownTimer.start()
-                
-               
-            }
-            
+            self.secondTimer()
         }
-        // Configure interface objects here.
-    }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + addedTime! + 7) {
+//            self.doneButton.setHidden(false)
+            self.pushController(withName: "doneView", context: nil)
+        }
+     }
     
     func firstTimer(){
-        timerLabel.setText(soapArray.randomElement())
-        let firstCounter = 4.0
-        let firstDate = Date(timeInterval: firstCounter, since: currentDate)
-        countdownTimer.setDate(firstDate)
+        let interval:TimeInterval = 4.0
+        
+//        timerGroup.setBackgroundImageNamed("initial")
+//        timerGroup.startAnimatingWithImages(in: NSRange(location:0, length: Int(interval) + 1), duration: interval, repeatCount: 1)
+        
+//        if let scene: SKScene = SKScene(fileNamed: "ProgressCirle.swift") {
+//
+//        }
+        
+        
+        timerLabel.setText(self.soapArray.randomElement())
+        
+        let time = Date(timeIntervalSinceNow: interval)
+        countdownTimer.setDate(time)
         countdownTimer.start()
-        print(firstDate)
+        
+        if timer.isValid {
+            timer = Timer.scheduledTimer(timeInterval: interval, target: self, selector: #selector(timerDidEnd(timer:)), userInfo: nil, repeats: false)
+        }
     }
+    
+    
+    func timerStop(){
+           timer.invalidate()
+       }
+    
+    @objc
+    func timerDidEnd(timer:Timer) {
+        isRunning = !isRunning
+        firstTimer()
+        
+    }
+    
+    func secondTimer() {
+        
+                        self.timerLabel.setText(self.sayingsArray.randomElement())
+                        guard let timeInterval = labelText else {
+                            return
+            
+                        }
+                        let myDate = Date(timeIntervalSinceNow: timeInterval + 1)
+                        self.countdownTimer.setDate(myDate)
+                        self.countdownTimer.start()
+        
+    }
+    
+    
 }
