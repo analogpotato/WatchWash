@@ -29,10 +29,10 @@
             </objects>
             <point key="canvasLocation" x="207.69565217391303" y="-294.46428571428572"/>
         </scene>
-        <!--Interface Controller-->
+        <!--powerWashView-->
         <scene sceneID="6td-I2-t0T">
             <objects>
-                <controller id="icw-Xs-a4p">
+                <controller identifier="powerWashView" id="icw-Xs-a4p" customClass="PowerWashView" customModule="WatchWash_WatchKit_Extension">
                     <items>
                         <label height="40" alignment="center" text="Custom Reminders" textAlignment="center" id="OLR-Ys-Z1S">
                             <fontDescription key="font" style="UICTFontTextStyleTitle3"/>
@@ -114,7 +114,11 @@
                                     <action selector="menuReminder" destination="AgC-eL-Hgc" id="Izc-1g-qQa"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Power Wash" image="dollarsign.circle.fill" catalog="system" id="I1u-rE-Df8"/>
+                            <menuItem title="Power Wash" image="dollarsign.circle.fill" catalog="system" id="I1u-rE-Df8">
+                                <connections>
+                                    <action selector="menuPowerWash" destination="AgC-eL-Hgc" id="ESl-3G-RHZ"/>
+                                </connections>
+                            </menuItem>
                         </items>
                     </menu>
                     <connections>

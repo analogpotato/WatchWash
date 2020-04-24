@@ -62,6 +62,9 @@ class InterfaceController: WKInterfaceController {
         pushController(withName: "reminderView", context: nil)
     }
     
+    @IBAction func menuPowerWash() {
+       pushController(withName: "powerWashView", context: nil)
+    }
     
     
     
