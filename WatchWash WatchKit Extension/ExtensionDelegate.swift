@@ -7,11 +7,25 @@
 //
 
 import WatchKit
+import UserNotifications
 
-class ExtensionDelegate: NSObject, WKExtensionDelegate {
+class ExtensionDelegate: NSObject, WKExtensionDelegate, UNUserNotificationCenterDelegate {
 
+    let notificationCenter = UNUserNotificationCenter.current()
+    
     func applicationDidFinishLaunching() {
         // Perform any final initialization of your application.
+
+        
+        notificationCenter.delegate = self
+        notificationCenter.requestAuthorization(options: [.alert, .sound]) { (granted, error) in
+            
+            if (granted) {
+                WKExtension.shared().registerForRemoteNotifications()
+            }
+        }
+        
+        
     }
 
     func applicationDidBecomeActive() {

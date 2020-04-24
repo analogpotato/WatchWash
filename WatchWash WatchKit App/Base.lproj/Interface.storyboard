@@ -29,6 +29,27 @@
             </objects>
             <point key="canvasLocation" x="207.69565217391303" y="-294.46428571428572"/>
         </scene>
+        <!--Interface Controller-->
+        <scene sceneID="6td-I2-t0T">
+            <objects>
+                <controller id="icw-Xs-a4p">
+                    <items>
+                        <label height="40" alignment="center" text="Custom Reminders" textAlignment="center" id="OLR-Ys-Z1S">
+                            <fontDescription key="font" style="UICTFontTextStyleTitle3"/>
+                        </label>
+                        <label alignment="left" numberOfLines="0" id="1l0-jp-abl">
+                            <string key="text">In app purchases will grant you custom notification times, multiple notifications and additional timer lengths. In addition to this, all proceeds from in-app purchases for the first month of launch will be directly donated to healthcare providers during the coronavirus crisis. After the first month, that will change to 50% of all donations for the life of the app. You can select any amount from below!</string>
+                        </label>
+                        <separator alignment="left" id="uXg-ff-dS3"/>
+                        <button width="1" alignment="left" title="$0.99" id="47A-NT-H1c"/>
+                        <button width="1" alignment="left" title="$4.99" id="WMQ-IJ-Mlk"/>
+                        <button width="1" alignment="left" title="$9.99" id="zYO-Q2-fn8"/>
+                        <button width="1" alignment="left" title="Dismiss" id="L3G-3o-xcf"/>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="565" y="-421"/>
+        </scene>
         <!--reminderView-->
         <scene sceneID="JZv-9P-Fgk">
             <objects>
@@ -69,7 +90,7 @@
                 <controller identifier="mainView" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="WatchWash_WatchKit_App" customModuleProvider="target">
                     <items>
                         <label alignment="center" text="How many Seconds?" id="OIv-MA-pEV"/>
-                        <picker height="94" alignment="left" focusStyle="sequence" id="tyy-kh-fOo">
+                        <picker height="80" alignment="left" focusStyle="sequence" id="tyy-kh-fOo">
                             <connections>
                                 <action selector="pickerSelect:" destination="AgC-eL-Hgc" id="uRc-kJ-gRz"/>
                             </connections>
@@ -80,18 +101,25 @@
                                 <segue destination="5Rw-Zn-92U" kind="push" identifier="timerSegue" id="iuh-Sx-FRb"/>
                             </connections>
                         </button>
+                        <button width="1" alignment="left" title="Test Notification" id="hnt-QO-G9i">
+                            <connections>
+                                <action selector="testButtonPushed" destination="AgC-eL-Hgc" id="ZCi-d1-Bnx"/>
+                            </connections>
+                        </button>
                     </items>
                     <menu key="menu" id="vQP-lo-bps">
                         <items>
-                            <menuItem title="Reminder" icon="add" id="i8n-xD-Dys">
+                            <menuItem title="Reminder" image="list.dash" catalog="system" id="i8n-xD-Dys">
                                 <connections>
                                     <action selector="menuReminder" destination="AgC-eL-Hgc" id="Izc-1g-qQa"/>
                                 </connections>
                             </menuItem>
+                            <menuItem title="Power Wash" image="dollarsign.circle.fill" catalog="system" id="I1u-rE-Df8"/>
                         </items>
                     </menu>
                     <connections>
                         <outlet property="myPicker" destination="tyy-kh-fOo" id="PP0-T9-1V5"/>
+                        <outlet property="notificationTestButton" destination="hnt-QO-G9i" id="kP4-a5-I0y"/>
                     </connections>
                 </controller>
             </objects>
@@ -102,7 +130,7 @@
             <objects>
                 <notificationController id="YCC-NB-fut">
                     <items>
-                        <label alignment="left" text="Alert Label" numberOfLines="0" id="IdU-wH-bcW"/>
+                        <label width="1" alignment="left" verticalAlignment="center" text="Time to wash your hands!" textAlignment="left" numberOfLines="0" id="IdU-wH-bcW"/>
                     </items>
                     <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
                     <connections>
@@ -112,7 +140,7 @@
                     </connections>
                 </notificationController>
             </objects>
-            <point key="canvasLocation" x="220" y="643"/>
+            <point key="canvasLocation" x="219.52173913043478" y="642.8125"/>
         </scene>
         <!--Notification Controller-->
         <scene sceneID="ZPc-GJ-vnh">
@@ -126,22 +154,24 @@
             <objects>
                 <controller id="5Rw-Zn-92U" customClass="TimerController" customModule="WatchWash_WatchKit_Extension">
                     <items>
-                        <group width="1" height="1" alignment="center" verticalAlignment="center" id="2h0-kG-gpR">
+                        <group width="126" height="126" alignment="center" verticalAlignment="center" id="2h0-kG-gpR">
                             <items>
-                                <timer alignment="center" verticalAlignment="center" format="short" previewedSeconds="20" id="sWe-xZ-cmW">
-                                    <fontDescription key="font" style="UICTFontTextStyleTitle0"/>
+                                <timer alignment="center" verticalAlignment="center" textAlignment="center" format="short" previewedSeconds="20" id="sWe-xZ-cmW">
+                                    <fontDescription key="font" style="UICTFontTextStyleTitle2"/>
                                     <calendarUnit key="units" second="YES"/>
                                 </timer>
                             </items>
                         </group>
+                        <label alignment="center" verticalAlignment="bottom" text="test" textAlignment="center" numberOfLines="0" id="UZg-l1-MSg"/>
                     </items>
                     <connections>
                         <outlet property="countdownTimer" destination="sWe-xZ-cmW" id="4BO-zO-CUu"/>
+                        <outlet property="textLabel" destination="UZg-l1-MSg" id="JsW-Ex-y95"/>
                         <outlet property="timerGroup" destination="2h0-kG-gpR" id="Hcl-lD-STK"/>
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="207.69565217391303" y="63.75"/>
+            <point key="canvasLocation" x="207" y="63"/>
         </scene>
         <!--doneView-->
         <scene sceneID="eam-pD-HGl">
@@ -167,4 +197,8 @@
             <point key="canvasLocation" x="468" y="345"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="dollarsign.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="list.dash" catalog="system" width="128" height="86"/>
+    </resources>
 </document>

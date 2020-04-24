@@ -10,10 +10,15 @@ import WatchKit
 import Foundation
 
 
+
 class InterfaceController: WKInterfaceController {
     
     @IBOutlet weak var myPicker: WKInterfacePicker!
     @IBOutlet weak var selectLabel: WKInterfaceLabel!
+    
+    @IBOutlet weak var notificationTestButton: WKInterfaceButton!
+    
+    let notification = NotificationClass()
     
     var itemList: [(String, Int)] = [
         ("Basic Wash", 20),
@@ -25,8 +30,8 @@ class InterfaceController: WKInterfaceController {
 
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
-        
 
+        notification.scheduleANotification()
         
         let pickerItems: [WKPickerItem] = itemList.map {
              let pickerItem = WKPickerItem()
@@ -39,13 +44,14 @@ class InterfaceController: WKInterfaceController {
         // Configure interface objects here.
     }
     
-
+    @IBAction func testButtonPushed() {
+        notification.scheduleANotification()
+    }
     
+
     @IBAction func pickerSelect(_ value: Int) {
-//        selectLabel.setText(String(itemList[value].1))
         pickerValue = itemList[value].1
         print(pickerValue)
-        
     }
     
     override func contextForSegue(withIdentifier segueIdentifier: String) -> Any? {
@@ -57,13 +63,15 @@ class InterfaceController: WKInterfaceController {
     }
     
     
+    
+    
     override func willActivate() {
-        // This method is called when watch view controller is about to be visible to user
+
         super.willActivate()
     }
     
     override func didDeactivate() {
-        // This method is called when watch view controller is no longer visible
+
         super.didDeactivate()
     }
 

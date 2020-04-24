@@ -12,6 +12,7 @@
 		CF6FFE14245221A900776336 /* DoneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6FFE13245221A900776336 /* DoneController.swift */; };
 		CF6FFE1624522B3500776336 /* ProgressCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6FFE1524522B3500776336 /* ProgressCircle.swift */; };
 		CF85B702244905BC004F4222 /* AddReminderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF85B701244905BC004F4222 /* AddReminderView.swift */; };
+		CF98630D2452C72900DD939A /* NotificationClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF98630C2452C72900DD939A /* NotificationClass.swift */; };
 		CFD0CFC42446502F00750E41 /* WatchWash WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = CFD0CFC32446502F00750E41 /* WatchWash WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		CFD0CFCA2446502F00750E41 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFD0CFC82446502F00750E41 /* Interface.storyboard */; };
 		CFD0CFCC2446503100750E41 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFD0CFCB2446503100750E41 /* Assets.xcassets */; };
@@ -72,6 +73,8 @@
 		CF6FFE13245221A900776336 /* DoneController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneController.swift; sourceTree = "<group>"; };
 		CF6FFE1524522B3500776336 /* ProgressCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressCircle.swift; sourceTree = "<group>"; };
 		CF85B701244905BC004F4222 /* AddReminderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReminderView.swift; sourceTree = "<group>"; };
+		CF98630B2452C4BA00DD939A /* WatchWash WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "WatchWash WatchKit Extension.entitlements"; sourceTree = "<group>"; };
+		CF98630C2452C72900DD939A /* NotificationClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationClass.swift; sourceTree = "<group>"; };
 		CFD0CFBF2446502F00750E41 /* WatchWash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WatchWash.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFD0CFC32446502F00750E41 /* WatchWash WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WatchWash WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFD0CFC92446502F00750E41 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
@@ -117,6 +120,31 @@
 			path = Timer;
 			sourceTree = "<group>";
 		};
+		CF98630E2452D0A700DD939A /* Done */ = {
+			isa = PBXGroup;
+			children = (
+				CF6FFE13245221A900776336 /* DoneController.swift */,
+			);
+			path = Done;
+			sourceTree = "<group>";
+		};
+		CF98630F2452D0AF00DD939A /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				CF6FFE1524522B3500776336 /* ProgressCircle.swift */,
+				CF98630C2452C72900DD939A /* NotificationClass.swift */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		CF9863102452D0C500DD939A /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				CFD0CFD72446503100750E41 /* InterfaceController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
 		CFD0CFB82446502F00750E41 = {
 			isa = PBXGroup;
 			children = (
@@ -149,17 +177,18 @@
 		CFD0CFD62446503100750E41 /* WatchWash WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
-				CFD0CFD72446503100750E41 /* InterfaceController.swift */,
+				CF98630B2452C4BA00DD939A /* WatchWash WatchKit Extension.entitlements */,
+				CF9863102452D0C500DD939A /* Main */,
 				CF39D4A42448EF3C00F6F6F7 /* Reminders */,
 				CF39D4A52448EF4B00F6F6F7 /* Timer */,
+				CF98630E2452D0A700DD939A /* Done */,
+				CF98630F2452D0AF00DD939A /* Support */,
 				CFD0CFD92446503100750E41 /* ExtensionDelegate.swift */,
 				CFD0CFDB2446503100750E41 /* NotificationController.swift */,
 				CFD0CFDD2446503100750E41 /* ComplicationController.swift */,
-				CFD0CFDF2446503200750E41 /* Assets.xcassets */,
-				CFD0CFE12446503200750E41 /* Info.plist */,
 				CFD0CFE22446503200750E41 /* PushNotificationPayload.apns */,
-				CF6FFE13245221A900776336 /* DoneController.swift */,
-				CF6FFE1524522B3500776336 /* ProgressCircle.swift */,
+				CFD0CFE12446503200750E41 /* Info.plist */,
+				CFD0CFDF2446503200750E41 /* Assets.xcassets */,
 			);
 			path = "WatchWash WatchKit Extension";
 			sourceTree = "<group>";
@@ -297,6 +326,7 @@
 				CFD0CFDE2446503100750E41 /* ComplicationController.swift in Sources */,
 				CF85B702244905BC004F4222 /* AddReminderView.swift in Sources */,
 				CFD0CFF1244656EF00750E41 /* TimerController.swift in Sources */,
+				CF98630D2452C72900DD939A /* NotificationClass.swift in Sources */,
 				CFD0CFDA2446503100750E41 /* ExtensionDelegate.swift in Sources */,
 				CF39D4A32448EF0800F6F6F7 /* reminderRow.swift in Sources */,
 				CFD0CFD82446503100750E41 /* InterfaceController.swift in Sources */,
@@ -447,6 +477,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "WatchWash WatchKit Extension/WatchWash WatchKit Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 482J99T69B;
 				INFOPLIST_FILE = "WatchWash WatchKit Extension/Info.plist";
@@ -469,6 +500,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "WatchWash WatchKit Extension/WatchWash WatchKit Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 482J99T69B;
 				INFOPLIST_FILE = "WatchWash WatchKit Extension/Info.plist";

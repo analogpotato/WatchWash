@@ -15,7 +15,9 @@ class DoneController: WKInterfaceController {
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
+        WKInterfaceDevice.current().play(.success)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
             self.pushController(withName: "mainView", context: nil)
         }
         
