@@ -12,7 +12,7 @@ import UserNotifications
 class NotificationClass: NSObject, UNUserNotificationCenterDelegate {
     
     
-      func scheduleANotification() {
+    func scheduleANotification(hour:Int, minute: Int) {
             
             let content = UNMutableNotificationContent()
             content.title = "Time to Wash!"
@@ -22,7 +22,13 @@ class NotificationClass: NSObject, UNUserNotificationCenterDelegate {
             content.categoryIdentifier = "ACTIONS"
             content.sound = UNNotificationSound.default
             
-            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 3, repeats: false)
+            var dateComponents = DateComponents()
+            dateComponents.calendar = Calendar.current
+        
+            dateComponents.hour = hour
+            dateComponents.minute = minute
+        
+            let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
     
             let notifyRequest = UNNotificationRequest(identifier: "repeat", content: content, trigger: trigger)
             

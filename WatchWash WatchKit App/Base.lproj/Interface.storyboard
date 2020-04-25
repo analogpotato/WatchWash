@@ -11,34 +11,58 @@
             <objects>
                 <controller id="Dci-Th-t3h" customClass="AddReminderView" customModule="WatchWash_WatchKit_Extension">
                     <items>
+                        <label alignment="center" text="Set Reminder" textAlignment="center" id="8Ze-IF-mTu"/>
+                        <separator alignment="left" id="bHP-3j-I54">
+                            <color key="color" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </separator>
                         <group width="1" alignment="left" id="I0o-BL-2ck">
                             <items>
-                                <picker width="80" height="100" alignment="center" verticalAlignment="center" focusStyle="stack" id="S8R-P7-KEn"/>
-                                <picker width="80" height="100" alignment="center" verticalAlignment="center" focusStyle="stack" id="psL-qj-V1Y"/>
+                                <picker width="42" height="80" alignment="center" verticalAlignment="center" focusStyle="stack" id="S8R-P7-KEn">
+                                    <connections>
+                                        <action selector="hourSelect:" destination="Dci-Th-t3h" id="LZ0-6K-0ef"/>
+                                    </connections>
+                                </picker>
+                                <picker width="42" height="80" alignment="center" verticalAlignment="center" focusStyle="stack" id="psL-qj-V1Y">
+                                    <connections>
+                                        <action selector="minuteSelect:" destination="Dci-Th-t3h" id="dEj-re-X36"/>
+                                    </connections>
+                                </picker>
+                                <picker width="42" height="80" alignment="center" verticalAlignment="center" focusStyle="stack" id="xca-wq-pp9">
+                                    <connections>
+                                        <action selector="timeOfDaySelect:" destination="Dci-Th-t3h" id="bSR-2b-yA7"/>
+                                    </connections>
+                                </picker>
                             </items>
                         </group>
+                        <separator alignment="left" id="cds-Ea-es0">
+                            <color key="color" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </separator>
                         <button width="1" alignment="left" verticalAlignment="center" title="Save" id="rX5-D9-pmT">
                             <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="saveReminderButton" destination="Dci-Th-t3h" id="feW-ZA-RaI"/>
+                            </connections>
                         </button>
                     </items>
                     <connections>
                         <outlet property="hourPicker" destination="S8R-P7-KEn" id="nF0-6H-gnX"/>
                         <outlet property="minutePicker" destination="psL-qj-V1Y" id="PDe-am-iR7"/>
+                        <outlet property="timeOfDayPicker" destination="xca-wq-pp9" id="vhY-jD-J5t"/>
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="207.69565217391303" y="-294.46428571428572"/>
+            <point key="canvasLocation" x="207.69565217391303" y="-294.84375"/>
         </scene>
         <!--powerWashView-->
         <scene sceneID="6td-I2-t0T">
             <objects>
                 <controller identifier="powerWashView" id="icw-Xs-a4p" customClass="PowerWashView" customModule="WatchWash_WatchKit_Extension">
                     <items>
-                        <label height="40" alignment="center" text="Custom Reminders" textAlignment="center" id="OLR-Ys-Z1S">
+                        <label height="40" alignment="center" text="Power Wash Pro" textAlignment="center" id="OLR-Ys-Z1S">
                             <fontDescription key="font" style="UICTFontTextStyleTitle3"/>
                         </label>
                         <label alignment="left" numberOfLines="0" id="1l0-jp-abl">
-                            <string key="text">In app purchases will grant you custom notification times, multiple notifications and additional timer lengths. In addition to this, all proceeds from in-app purchases for the first month of launch will be directly donated to healthcare providers during the coronavirus crisis. After the first month, that will change to 50% of all donations for the life of the app. You can select any amount from below!</string>
+                            <string key="text">Power Wash Pro grants you the ability to create reminders at any time of the day to wash your hands. In addition to this, all proceeds from in-app purchases for the first month of launch will be directly donated to healthcare providers during the coronavirus crisis. After the first month, that will change to 50% of all donations for the life of the app. You can select any amount from below!</string>
                         </label>
                         <separator alignment="left" id="uXg-ff-dS3"/>
                         <button width="1" alignment="left" title="$0.99" id="47A-NT-H1c"/>
