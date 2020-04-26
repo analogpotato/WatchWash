@@ -11,6 +11,9 @@
 		CF39D4A32448EF0800F6F6F7 /* reminderRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF39D4A22448EF0800F6F6F7 /* reminderRow.swift */; };
 		CF6FFE14245221A900776336 /* DoneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6FFE13245221A900776336 /* DoneController.swift */; };
 		CF6FFE1624522B3500776336 /* ProgressCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6FFE1524522B3500776336 /* ProgressCircle.swift */; };
+		CF72170324561F0A005B4F81 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF72170224561F0A005B4F81 /* CoreData.framework */; };
+		CF72170624561FDF005B4F81 /* NotificationEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF72170424561FDF005B4F81 /* NotificationEntity+CoreDataClass.swift */; };
+		CF72170724561FDF005B4F81 /* NotificationEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF72170524561FDF005B4F81 /* NotificationEntity+CoreDataProperties.swift */; };
 		CF85B702244905BC004F4222 /* AddReminderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF85B701244905BC004F4222 /* AddReminderView.swift */; };
 		CF98630D2452C72900DD939A /* NotificationClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF98630C2452C72900DD939A /* NotificationClass.swift */; };
 		CF9863122452D57E00DD939A /* PowerWashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9863112452D57E00DD939A /* PowerWashView.swift */; };
@@ -73,6 +76,10 @@
 		CF39D4A22448EF0800F6F6F7 /* reminderRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = reminderRow.swift; sourceTree = "<group>"; };
 		CF6FFE13245221A900776336 /* DoneController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneController.swift; sourceTree = "<group>"; };
 		CF6FFE1524522B3500776336 /* ProgressCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressCircle.swift; sourceTree = "<group>"; };
+		CF7216FC24561DB8005B4F81 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		CF72170224561F0A005B4F81 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS6.2.sdk/System/Library/Frameworks/CoreData.framework; sourceTree = DEVELOPER_DIR; };
+		CF72170424561FDF005B4F81 /* NotificationEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		CF72170524561FDF005B4F81 /* NotificationEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		CF85B701244905BC004F4222 /* AddReminderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReminderView.swift; sourceTree = "<group>"; };
 		CF98630B2452C4BA00DD939A /* WatchWash WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "WatchWash WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 		CF98630C2452C72900DD939A /* NotificationClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationClass.swift; sourceTree = "<group>"; };
@@ -98,6 +105,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF72170324561F0A005B4F81 /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -122,6 +130,14 @@
 			path = Timer;
 			sourceTree = "<group>";
 		};
+		CF72170124561F0A005B4F81 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CF72170224561F0A005B4F81 /* CoreData.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		CF98630E2452D0A700DD939A /* Done */ = {
 			isa = PBXGroup;
 			children = (
@@ -133,6 +149,8 @@
 		CF98630F2452D0AF00DD939A /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				CF72170424561FDF005B4F81 /* NotificationEntity+CoreDataClass.swift */,
+				CF72170524561FDF005B4F81 /* NotificationEntity+CoreDataProperties.swift */,
 				CF6FFE1524522B3500776336 /* ProgressCircle.swift */,
 				CF98630C2452C72900DD939A /* NotificationClass.swift */,
 			);
@@ -150,9 +168,11 @@
 		CFD0CFB82446502F00750E41 = {
 			isa = PBXGroup;
 			children = (
+				CF7216FB24561DB8005B4F81 /* DataModel.xcdatamodeld */,
 				CFD0CFC72446502F00750E41 /* WatchWash WatchKit App */,
 				CFD0CFD62446503100750E41 /* WatchWash WatchKit Extension */,
 				CFD0CFC02446502F00750E41 /* Products */,
+				CF72170124561F0A005B4F81 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -326,6 +346,7 @@
 				CF6FFE14245221A900776336 /* DoneController.swift in Sources */,
 				CFD0CFDC2446503100750E41 /* NotificationController.swift in Sources */,
 				CF6FFE1624522B3500776336 /* ProgressCircle.swift in Sources */,
+				CF72170724561FDF005B4F81 /* NotificationEntity+CoreDataProperties.swift in Sources */,
 				CFD0CFDE2446503100750E41 /* ComplicationController.swift in Sources */,
 				CF85B702244905BC004F4222 /* AddReminderView.swift in Sources */,
 				CF9863122452D57E00DD939A /* PowerWashView.swift in Sources */,
@@ -334,6 +355,7 @@
 				CFD0CFDA2446503100750E41 /* ExtensionDelegate.swift in Sources */,
 				CF39D4A32448EF0800F6F6F7 /* reminderRow.swift in Sources */,
 				CFD0CFD82446503100750E41 /* InterfaceController.swift in Sources */,
+				CF72170624561FDF005B4F81 /* NotificationEntity+CoreDataClass.swift in Sources */,
 				CF39D4A12448DE1100F6F6F7 /* ReminderController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -633,6 +655,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		CF7216FB24561DB8005B4F81 /* DataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				CF7216FC24561DB8005B4F81 /* DataModel.xcdatamodel */,
+			);
+			currentVersion = CF7216FC24561DB8005B4F81 /* DataModel.xcdatamodel */;
+			path = DataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = CFD0CFB92446502F00750E41 /* Project object */;
 }

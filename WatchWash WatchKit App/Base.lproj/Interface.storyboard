@@ -17,17 +17,23 @@
                         </separator>
                         <group width="1" alignment="left" id="I0o-BL-2ck">
                             <items>
-                                <picker width="42" height="80" alignment="center" verticalAlignment="center" focusStyle="stack" id="S8R-P7-KEn">
+                                <picker width="42" height="60" alignment="center" verticalAlignment="center" focusStyle="stack" id="S8R-P7-KEn">
+                                    <variation key="device=watch38mm" width="42"/>
+                                    <variation key="device=watch44mm" height="80" width="58"/>
                                     <connections>
                                         <action selector="hourSelect:" destination="Dci-Th-t3h" id="LZ0-6K-0ef"/>
                                     </connections>
                                 </picker>
-                                <picker width="42" height="80" alignment="center" verticalAlignment="center" focusStyle="stack" id="psL-qj-V1Y">
+                                <picker width="44" height="60" alignment="center" verticalAlignment="center" focusStyle="stack" id="psL-qj-V1Y">
+                                    <variation key="device=watch38mm" width="44"/>
+                                    <variation key="device=watch44mm" height="80" width="58"/>
                                     <connections>
                                         <action selector="minuteSelect:" destination="Dci-Th-t3h" id="dEj-re-X36"/>
                                     </connections>
                                 </picker>
-                                <picker width="42" height="80" alignment="center" verticalAlignment="center" focusStyle="stack" id="xca-wq-pp9">
+                                <picker width="44" height="60" alignment="center" verticalAlignment="center" focusStyle="stack" id="xca-wq-pp9">
+                                    <variation key="device=watch38mm" width="44"/>
+                                    <variation key="device=watch44mm" height="80" width="58"/>
                                     <connections>
                                         <action selector="timeOfDaySelect:" destination="Dci-Th-t3h" id="bSR-2b-yA7"/>
                                     </connections>
@@ -35,6 +41,10 @@
                             </items>
                         </group>
                         <separator alignment="left" id="cds-Ea-es0">
+                            <color key="color" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </separator>
+                        <label alignment="center" text="Label" id="kVm-jr-ZKG"/>
+                        <separator alignment="left" id="9hV-b8-Efs">
                             <color key="color" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </separator>
                         <button width="1" alignment="left" verticalAlignment="center" title="Save" id="rX5-D9-pmT">
@@ -48,6 +58,7 @@
                         <outlet property="hourPicker" destination="S8R-P7-KEn" id="nF0-6H-gnX"/>
                         <outlet property="minutePicker" destination="psL-qj-V1Y" id="PDe-am-iR7"/>
                         <outlet property="timeOfDayPicker" destination="xca-wq-pp9" id="vhY-jD-J5t"/>
+                        <outlet property="timeSelectLabel" destination="kVm-jr-ZKG" id="uyq-QH-lV9"/>
                     </connections>
                 </controller>
             </objects>

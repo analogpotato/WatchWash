@@ -31,7 +31,7 @@ class InterfaceController: WKInterfaceController {
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
 
-        notification.scheduleANotification(hour: 15, minute: 0)
+      
         
         let pickerItems: [WKPickerItem] = itemList.map {
              let pickerItem = WKPickerItem()
@@ -45,7 +45,7 @@ class InterfaceController: WKInterfaceController {
     }
     
     @IBAction func testButtonPushed() {
-        notification.scheduleANotification(hour: 15, minute: 1)
+  
     }
     
 

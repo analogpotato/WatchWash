@@ -8,13 +8,19 @@
 
 import WatchKit
 import UserNotifications
+import CoreData
 
-class NotificationClass: NSObject, UNUserNotificationCenterDelegate {
+
+class NotificationClass: NSObject, UNUserNotificationCenterDelegate  {
+    
+    let container = NSPersistentContainer(name:"DataModel")
+  
     
     
-    func scheduleANotification(hour:Int, minute: Int) {
+    func scheduleANotification(hour:Int, minute:Int, tod: String) {
             
             let content = UNMutableNotificationContent()
+        
             content.title = "Time to Wash!"
             content.subtitle = "Times Up!"
             content.body = "Tap the 'Finish' button to stop being notified."
@@ -25,7 +31,13 @@ class NotificationClass: NSObject, UNUserNotificationCenterDelegate {
             var dateComponents = DateComponents()
             dateComponents.calendar = Calendar.current
         
+        if tod == "PM" && hour <= 12 {
+            dateComponents.hour = hour + 12
+        } else {
             dateComponents.hour = hour
+        }
+        
+//            dateComponents.hour = hour
             dateComponents.minute = minute
         
             let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
@@ -38,8 +50,12 @@ class NotificationClass: NSObject, UNUserNotificationCenterDelegate {
                 if let theError = error {
                     print(theError.localizedDescription)
                 } else {
-                    print("Scheduled OK")
+                    print("Scheduled OK \(hour):\(minute)\(tod)")
                 }
             }
         }
+    
+    
+    
+    
 }
