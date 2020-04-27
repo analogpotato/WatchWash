@@ -96,7 +96,6 @@
 		CFD0CFDD2446503100750E41 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
 		CFD0CFDF2446503200750E41 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CFD0CFE12446503200750E41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CFD0CFE22446503200750E41 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		CFD0CFF0244656EF00750E41 /* TimerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -208,7 +207,6 @@
 				CFD0CFD92446503100750E41 /* ExtensionDelegate.swift */,
 				CFD0CFDB2446503100750E41 /* NotificationController.swift */,
 				CFD0CFDD2446503100750E41 /* ComplicationController.swift */,
-				CFD0CFE22446503200750E41 /* PushNotificationPayload.apns */,
 				CFD0CFE12446503200750E41 /* Info.plist */,
 				CFD0CFDF2446503200750E41 /* Assets.xcassets */,
 				CF9863112452D57E00DD939A /* PowerWashView.swift */,

@@ -8,9 +8,10 @@
 
 import WatchKit
 import Foundation
+import CoreData
 
 
-class AddReminderView: WKInterfaceController {
+class AddReminderView: WKInterfaceController, NSFetchedResultsControllerDelegate {
 
     @IBOutlet weak var hourPicker: WKInterfacePicker!
     @IBOutlet weak var minutePicker: WKInterfacePicker!
@@ -19,18 +20,23 @@ class AddReminderView: WKInterfaceController {
     
     let notification = NotificationClass()
     
+    
+    var container = NSPersistentContainer (name: "DataModel")
+    
+    
     let hourArray = [01,02,03,04,05,06,07,08,09,10,11,12]
 
-    let minuteArray = [00,15,30,45]
+    
+    let minuteArray = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59]
 
     let timeOfDayArray = ["AM", "PM"]
     
     var hourValue = 1
-    var minuteValue = 00
+    var minuteValue = 0
     var timeOfDayValue = "AM"
     var todVariance = 12
     
-
+   
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
@@ -45,7 +51,7 @@ class AddReminderView: WKInterfaceController {
         
         let minuteItems: [WKPickerItem] = minuteArray.map {
         let minuteItem = WKPickerItem()
-            minuteItem.title = String($0)
+            minuteItem.title = String(format: ":%02d", $0)
         return minuteItem
              }
         
@@ -59,15 +65,29 @@ class AddReminderView: WKInterfaceController {
         minutePicker.setItems(minuteItems)
         timeOfDayPicker.setItems(todItems)
 
-        timeSelectLabel.setText("\(hourValue):\(minuteValue) \(timeOfDayValue)")
+        setLabel()
 
     }
     
 
+    func setLabel () {
+        
+        let timeFormattedString = String(format: "%02d:%02d", hourValue, minuteValue)
+         timeSelectLabel.setText("\(timeFormattedString) \(timeOfDayValue)")
+    }
+    
 
     @IBAction func saveReminderButton() {
               
         notification.scheduleANotification(hour: hourValue, minute: minuteValue, tod: timeOfDayValue)
+        
+        let notification = NotificationEntity(context: container.viewContext)
+        notification.hour = Int64(hourValue)
+        notification.minute = Int64(minuteValue)
+        notification.tod = timeOfDayValue
+        container.viewContext.insert(notification)
+        
+        
         
         print("\(hourValue):\(minuteValue) \(timeOfDayValue)")
         
@@ -77,17 +97,18 @@ class AddReminderView: WKInterfaceController {
     @IBAction func hourSelect(_ value: Int) {
         hourValue = hourArray[value]
         print(hourValue)
-        timeSelectLabel.setText("\(hourValue):\(minuteValue) \(timeOfDayValue)")
+        setLabel()
+       
     }
     
     @IBAction func minuteSelect(_ value: Int) {
         minuteValue = minuteArray[value]
-        timeSelectLabel.setText("\(hourValue):\(minuteValue) \(timeOfDayValue)")
+       setLabel()
     }
     
     @IBAction func timeOfDaySelect(_ value: Int) {
         timeOfDayValue = timeOfDayArray[value]
-        timeSelectLabel.setText("\(hourValue):\(minuteValue) \(timeOfDayValue)")
+       setLabel()
         
         
     }

@@ -12,9 +12,7 @@ import CoreData
 
 
 class NotificationClass: NSObject, UNUserNotificationCenterDelegate  {
-    
-    let container = NSPersistentContainer(name:"DataModel")
-  
+      
     
     
     func scheduleANotification(hour:Int, minute:Int, tod: String) {
@@ -22,8 +20,8 @@ class NotificationClass: NSObject, UNUserNotificationCenterDelegate  {
             let content = UNMutableNotificationContent()
         
             content.title = "Time to Wash!"
-            content.subtitle = "Times Up!"
-            content.body = "Tap the 'Finish' button to stop being notified."
+            content.subtitle = "Watch Wash Reminder"
+            content.body = "Get to a sink and scrub up! It's time to wash your hands. Tap here to start your timer."
             
             content.categoryIdentifier = "ACTIONS"
             content.sound = UNNotificationSound.default

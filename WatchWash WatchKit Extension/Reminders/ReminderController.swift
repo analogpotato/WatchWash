@@ -8,9 +8,13 @@
 
 import Foundation
 import WatchKit
+import CoreData
 
 
-class ReminderViewController: WKInterfaceController {
+class ReminderViewController: WKInterfaceController, NSFetchedResultsControllerDelegate {
+    
+  
+    
     
     @IBOutlet weak var reminderTable: WKInterfaceTable!
     
@@ -18,6 +22,7 @@ class ReminderViewController: WKInterfaceController {
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
+        
         
         reminderTable.setNumberOfRows(items.count, withRowType: "reminderRow")
         

@@ -43,7 +43,7 @@
                         <separator alignment="left" id="cds-Ea-es0">
                             <color key="color" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </separator>
-                        <label alignment="center" text="Label" id="kVm-jr-ZKG"/>
+                        <label alignment="center" text="Time" id="kVm-jr-ZKG"/>
                         <separator alignment="left" id="9hV-b8-Efs">
                             <color key="color" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </separator>
@@ -90,6 +90,13 @@
             <objects>
                 <controller identifier="reminderView" id="2US-wS-Tiz" customClass="ReminderViewController" customModule="WatchWash_WatchKit_Extension">
                     <items>
+                        <button width="1" alignment="left" title="Add Reminder" id="SIu-oJ-Q2B">
+                            <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="addReminderPressed" destination="2US-wS-Tiz" id="OMy-Pd-Knx"/>
+                                <segue destination="Dci-Th-t3h" kind="modal" id="qeE-7n-DvZ"/>
+                            </connections>
+                        </button>
                         <table alignment="left" id="9rL-nr-rQ3">
                             <items>
                                 <tableRow identifier="reminderRow" id="Wd5-3H-AUD" customClass="reminderRow" customModule="WatchWash_WatchKit_Extension">
@@ -104,13 +111,6 @@
                                 </tableRow>
                             </items>
                         </table>
-                        <button width="1" alignment="left" title="Add Reminder" id="SIu-oJ-Q2B">
-                            <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <connections>
-                                <action selector="addReminderPressed" destination="2US-wS-Tiz" id="OMy-Pd-Knx"/>
-                                <segue destination="Dci-Th-t3h" kind="modal" id="qeE-7n-DvZ"/>
-                            </connections>
-                        </button>
                     </items>
                     <connections>
                         <outlet property="reminderTable" destination="9rL-nr-rQ3" id="Wm0-9H-pm7"/>
