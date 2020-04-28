@@ -8,14 +8,14 @@
 
 import WatchKit
 import UserNotifications
-import CoreData
+
 
 
 class NotificationClass: NSObject, UNUserNotificationCenterDelegate  {
       
     
     
-    func scheduleANotification(hour:Int, minute:Int, tod: String) {
+    func scheduleANotification(hour:Int, minute:Int, tod: String, id: String) {
             
             let content = UNMutableNotificationContent()
         
@@ -48,7 +48,7 @@ class NotificationClass: NSObject, UNUserNotificationCenterDelegate  {
                 if let theError = error {
                     print(theError.localizedDescription)
                 } else {
-                    print("Scheduled OK \(hour):\(minute)\(tod)")
+                    print("Scheduled OK \(hour):\(minute)\(tod)\(id)")
                 }
             }
         }

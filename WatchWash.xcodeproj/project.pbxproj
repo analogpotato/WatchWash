@@ -76,7 +76,6 @@
 		CF39D4A22448EF0800F6F6F7 /* reminderRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = reminderRow.swift; sourceTree = "<group>"; };
 		CF6FFE13245221A900776336 /* DoneController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneController.swift; sourceTree = "<group>"; };
 		CF6FFE1524522B3500776336 /* ProgressCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressCircle.swift; sourceTree = "<group>"; };
-		CF7216FC24561DB8005B4F81 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		CF72170224561F0A005B4F81 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS6.2.sdk/System/Library/Frameworks/CoreData.framework; sourceTree = DEVELOPER_DIR; };
 		CF72170424561FDF005B4F81 /* NotificationEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		CF72170524561FDF005B4F81 /* NotificationEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -167,7 +166,6 @@
 		CFD0CFB82446502F00750E41 = {
 			isa = PBXGroup;
 			children = (
-				CF7216FB24561DB8005B4F81 /* DataModel.xcdatamodeld */,
 				CFD0CFC72446502F00750E41 /* WatchWash WatchKit App */,
 				CFD0CFD62446503100750E41 /* WatchWash WatchKit Extension */,
 				CFD0CFC02446502F00750E41 /* Products */,
@@ -653,19 +651,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		CF7216FB24561DB8005B4F81 /* DataModel.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				CF7216FC24561DB8005B4F81 /* DataModel.xcdatamodel */,
-			);
-			currentVersion = CF7216FC24561DB8005B4F81 /* DataModel.xcdatamodel */;
-			path = DataModel.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = CFD0CFB92446502F00750E41 /* Project object */;
 }

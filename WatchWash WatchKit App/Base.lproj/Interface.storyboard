@@ -83,7 +83,7 @@
                     </items>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="565" y="-421"/>
+            <point key="canvasLocation" x="-402" y="-153"/>
         </scene>
         <!--reminderView-->
         <scene sceneID="JZv-9P-Fgk">
@@ -93,16 +93,15 @@
                         <button width="1" alignment="left" title="Add Reminder" id="SIu-oJ-Q2B">
                             <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
-                                <action selector="addReminderPressed" destination="2US-wS-Tiz" id="OMy-Pd-Knx"/>
-                                <segue destination="Dci-Th-t3h" kind="modal" id="qeE-7n-DvZ"/>
+                                <segue destination="Dci-Th-t3h" kind="push" id="qeE-7n-DvZ"/>
                             </connections>
                         </button>
-                        <table alignment="left" id="9rL-nr-rQ3">
+                        <table alignment="center" id="9rL-nr-rQ3">
                             <items>
                                 <tableRow identifier="reminderRow" id="Wd5-3H-AUD" customClass="reminderRow" customModule="WatchWash_WatchKit_Extension">
                                     <group key="rootItem" width="1" alignment="left" id="wSa-7P-fW5">
                                         <items>
-                                            <label width="136" alignment="left" verticalAlignment="center" text="Label" id="G6H-ma-LHe"/>
+                                            <label alignment="center" verticalAlignment="center" text="Time" textAlignment="center" id="G6H-ma-LHe"/>
                                         </items>
                                     </group>
                                     <connections>
@@ -117,7 +116,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="-64" y="-294"/>
+            <point key="canvasLocation" x="-64" y="-295"/>
         </scene>
         <!--mainView-->
         <scene sceneID="aou-V4-d1y">
