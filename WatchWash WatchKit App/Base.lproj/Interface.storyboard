@@ -93,7 +93,8 @@
                         <button width="1" alignment="left" title="Add Reminder" id="SIu-oJ-Q2B">
                             <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
-                                <segue destination="Dci-Th-t3h" kind="push" id="qeE-7n-DvZ"/>
+                                <action selector="addReminderPressed" destination="2US-wS-Tiz" id="wab-CU-AUV"/>
+                                <segue destination="Dci-Th-t3h" kind="modal" id="qeE-7n-DvZ"/>
                             </connections>
                         </button>
                         <table alignment="center" id="9rL-nr-rQ3">

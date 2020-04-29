@@ -105,10 +105,9 @@ class AddReminderView: WKInterfaceController {
         notificationSaved(savedNotification: addedString)
         
         notification.scheduleANotification(hour: hourValue, minute: minuteValue, tod: timeOfDayValue, id: idString.uuidString)
+
         
-        reminderTable.reloadData()
-        
-        pop()
+        dismiss()
         
         print("\(hourValue):\(minuteValue) \(timeOfDayValue)")
         
@@ -143,11 +142,14 @@ class AddReminderView: WKInterfaceController {
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
+        
+
     }
 
     override func didDeactivate() {
         // This method is called when watch view controller is no longer visible
         super.didDeactivate()
+        
     }
 
 }
