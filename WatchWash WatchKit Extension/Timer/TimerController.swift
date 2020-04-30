@@ -19,7 +19,7 @@ class TimerController: WKInterfaceController {
     
     var intervalTimer = Timer()
     var isRunning = true
-    var isWorkingOut = false
+    var isWashing = false
 
     var startWash = "Start"
     var stopWash = "Stop"
@@ -37,7 +37,7 @@ class TimerController: WKInterfaceController {
 
                }
                //If in a workout, reset the timer
-               if isWorkingOut{
+               if isWashing {
                    timerReset()
                }
         
@@ -45,8 +45,8 @@ class TimerController: WKInterfaceController {
     
     
     func startRunning () {
-        isWorkingOut = !isWorkingOut
-        if isWorkingOut{
+        isWashing = !isWashing
+        if isWashing{
             //set up for workout
             textLabel.setText(icon())
 
@@ -100,39 +100,20 @@ class TimerController: WKInterfaceController {
     }
     
     
+    
      
-    func startSecondTimer() {
-        
-                let timerValue = intervalValue
-        // A method to reset timer to 0 and start timer
-               let interval:TimeInterval = timerValue
-               //Control the timer control on the interface
-        
-            timerGroup.setBackgroundImageNamed("progresscircle")
-            timerGroup.startAnimatingWithImages(in: NSRange(location:0, length: 120), duration: interval, repeatCount: 1)
 
-               countdownTimer.stop()
-               let time  = Date(timeIntervalSinceNow: interval)
-               countdownTimer.setDate(time)
-               countdownTimer.start()
-                
-               //control the runLoop timer
-               if intervalTimer.isValid{intervalTimer.invalidate()} //shut off timer if on
-              intervalTimer = Timer.scheduledTimer(timeInterval: interval ,
-                   target: self,  //Object to target when done
-                selector: #selector(secondTimerDidEnd(timer:)), //Method on the object
-                   userInfo: nil, //Extra user info, most likely a dictionary
-                   repeats: false) //Repeat of not
-    }
     
     
    
     @objc func timerDidEnd(timer:Timer){
         //When we reach end of an workout interval, switch workout type
             isRunning = !isRunning
-        
+        timerGroup.stopAnimating()
          DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            self.startSecondTimer()
+//            self.timerGroup.stopAnimating()
+//            self.startSecondTimer()
+            self.pushController(withName: "secondTimerView", context: nil)
                 }
         
             
@@ -142,8 +123,9 @@ class TimerController: WKInterfaceController {
     @objc func secondTimerDidEnd(timer:Timer){
         //When we reach end of an workout interval, switch workout type
             isRunning = !isRunning
-        
+        timerGroup.stopAnimating()
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+//            self.timerGroup.stopAnimating()
             self.pushController(withName: "doneView", context: nil)
             }
         

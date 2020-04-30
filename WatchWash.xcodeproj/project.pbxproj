@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		CF39D4A12448DE1100F6F6F7 /* ReminderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF39D4A02448DE1100F6F6F7 /* ReminderController.swift */; };
 		CF39D4A32448EF0800F6F6F7 /* reminderRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF39D4A22448EF0800F6F6F7 /* reminderRow.swift */; };
+		CF49263D245B7CF400844011 /* SecondTimerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF49263C245B7CF400844011 /* SecondTimerController.swift */; };
 		CF6FFE14245221A900776336 /* DoneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6FFE13245221A900776336 /* DoneController.swift */; };
 		CF6FFE1624522B3500776336 /* ProgressCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6FFE1524522B3500776336 /* ProgressCircle.swift */; };
 		CF72170324561F0A005B4F81 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF72170224561F0A005B4F81 /* CoreData.framework */; };
@@ -74,6 +75,7 @@
 /* Begin PBXFileReference section */
 		CF39D4A02448DE1100F6F6F7 /* ReminderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderController.swift; sourceTree = "<group>"; };
 		CF39D4A22448EF0800F6F6F7 /* reminderRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = reminderRow.swift; sourceTree = "<group>"; };
+		CF49263C245B7CF400844011 /* SecondTimerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondTimerController.swift; sourceTree = "<group>"; };
 		CF6FFE13245221A900776336 /* DoneController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneController.swift; sourceTree = "<group>"; };
 		CF6FFE1524522B3500776336 /* ProgressCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressCircle.swift; sourceTree = "<group>"; };
 		CF72170224561F0A005B4F81 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS6.2.sdk/System/Library/Frameworks/CoreData.framework; sourceTree = DEVELOPER_DIR; };
@@ -124,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				CFD0CFF0244656EF00750E41 /* TimerController.swift */,
+				CF49263C245B7CF400844011 /* SecondTimerController.swift */,
 			);
 			path = Timer;
 			sourceTree = "<group>";
@@ -350,6 +353,7 @@
 				CF98630D2452C72900DD939A /* NotificationClass.swift in Sources */,
 				CFD0CFDA2446503100750E41 /* ExtensionDelegate.swift in Sources */,
 				CF39D4A32448EF0800F6F6F7 /* reminderRow.swift in Sources */,
+				CF49263D245B7CF400844011 /* SecondTimerController.swift in Sources */,
 				CFD0CFD82446503100750E41 /* InterfaceController.swift in Sources */,
 				CF72170624561FDF005B4F81 /* NotificationEntity+CoreDataClass.swift in Sources */,
 				CF39D4A12448DE1100F6F6F7 /* ReminderController.swift in Sources */,

@@ -201,7 +201,7 @@
                                 </timer>
                             </items>
                         </group>
-                        <label alignment="center" verticalAlignment="bottom" text="test" textAlignment="center" numberOfLines="0" id="UZg-l1-MSg"/>
+                        <label alignment="center" text="test" textAlignment="center" numberOfLines="0" id="UZg-l1-MSg"/>
                     </items>
                     <connections>
                         <outlet property="countdownTimer" destination="sWe-xZ-cmW" id="4BO-zO-CUu"/>
@@ -210,7 +210,31 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="207" y="63"/>
+            <point key="canvasLocation" x="208" y="66"/>
+        </scene>
+        <!--secondTimerView-->
+        <scene sceneID="SaZ-VR-DNF">
+            <objects>
+                <controller identifier="secondTimerView" id="T0k-vX-wip" customClass="SecondTimerController" customModule="WatchWash_WatchKit_Extension">
+                    <items>
+                        <label alignment="center" text="test" textAlignment="center" numberOfLines="0" id="L2m-sk-zBC"/>
+                        <group width="126" height="126" alignment="center" verticalAlignment="center" id="3ap-Nz-1bo">
+                            <items>
+                                <timer alignment="center" verticalAlignment="center" textAlignment="center" format="short" previewedSeconds="20" id="03E-ma-lKj">
+                                    <fontDescription key="font" style="UICTFontTextStyleTitle2"/>
+                                    <calendarUnit key="units" second="YES"/>
+                                </timer>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="countdownTimer" destination="03E-ma-lKj" id="w5w-kt-1jC"/>
+                        <outlet property="secondTimerGroup" destination="3ap-Nz-1bo" id="287-OX-ejq"/>
+                        <outlet property="textLabel" destination="L2m-sk-zBC" id="9NO-Yc-UCL"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="468" y="66"/>
         </scene>
         <!--doneView-->
         <scene sceneID="eam-pD-HGl">
@@ -226,7 +250,7 @@
                     </items>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="468" y="0.0"/>
+            <point key="canvasLocation" x="717" y="61"/>
         </scene>
         <!--Notification Controller-->
         <scene sceneID="Niz-AI-uX2">

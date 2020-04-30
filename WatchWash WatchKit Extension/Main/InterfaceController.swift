@@ -27,6 +27,7 @@ class InterfaceController: WKInterfaceController {
         ("Whoa There", 60)]
 
     var pickerValue:Int = 20
+    let defaults = UserDefaults.standard
 
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
@@ -51,6 +52,8 @@ class InterfaceController: WKInterfaceController {
 
     @IBAction func pickerSelect(_ value: Int) {
         pickerValue = itemList[value].1
+        defaults.set(pickerValue, forKey: "Timer")
+
         print(pickerValue)
     }
     
