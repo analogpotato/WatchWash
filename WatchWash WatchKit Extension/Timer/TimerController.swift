@@ -36,6 +36,7 @@ class TimerController: WKInterfaceController {
         firstTimer()
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+        
             self.secondTimer()
         }
         
@@ -58,16 +59,19 @@ class TimerController: WKInterfaceController {
         countdownTimer.start()
         
         if timer.isValid {
+            print("isvalid")
             timer = Timer.scheduledTimer(timeInterval: interval, target: self, selector: #selector(timerDidEnd(timer:)), userInfo: nil, repeats: false)
         }
     }
     
     func secondTimer() {
         
+        timerStop()
+        
         let interval = Double(labelText!)
         
         timerGroup.setBackgroundImageNamed("progresscircle")
-        timerGroup.startAnimatingWithImages(in: NSRange(location:0, length: 240), duration: interval, repeatCount: 1)
+        timerGroup.startAnimatingWithImages(in: NSRange(location:0, length: 120), duration: interval, repeatCount: 1)
         
         self.textLabel.setText(self.sayingsArray.randomElement())
         guard let timeInterval = labelText else {
