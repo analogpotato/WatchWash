@@ -64,26 +64,31 @@
             </objects>
             <point key="canvasLocation" x="207.69565217391303" y="-294.84375"/>
         </scene>
-        <!--powerWashView-->
+        <!--settingsView-->
         <scene sceneID="6td-I2-t0T">
             <objects>
-                <controller identifier="powerWashView" id="icw-Xs-a4p" customClass="PowerWashView" customModule="WatchWash_WatchKit_Extension">
+                <controller identifier="settingsView" id="icw-Xs-a4p" customClass="SettingsView" customModule="WatchWash_WatchKit_Extension">
                     <items>
-                        <label height="40" alignment="center" text="Power Wash Pro" textAlignment="center" id="OLR-Ys-Z1S">
-                            <fontDescription key="font" style="UICTFontTextStyleTitle3"/>
-                        </label>
-                        <label alignment="left" numberOfLines="0" id="1l0-jp-abl">
-                            <string key="text">Power Wash Pro grants you the ability to create reminders at any time of the day to wash your hands. In addition to this, all proceeds from in-app purchases for the first month of launch will be directly donated to healthcare providers during the coronavirus crisis. After the first month, that will change to 50% of all donations for the life of the app. You can select any amount from below!</string>
-                        </label>
-                        <separator alignment="left" id="uXg-ff-dS3"/>
-                        <button width="1" alignment="left" title="$0.99" id="47A-NT-H1c"/>
-                        <button width="1" alignment="left" title="$4.99" id="WMQ-IJ-Mlk"/>
-                        <button width="1" alignment="left" title="$9.99" id="zYO-Q2-fn8"/>
-                        <button width="1" alignment="left" title="Dismiss" id="L3G-3o-xcf"/>
+                        <label alignment="center" text="Default Countdown" id="OIv-MA-pEV"/>
+                        <picker height="80" alignment="left" focusStyle="sequence" id="tyy-kh-fOo">
+                            <connections>
+                                <action selector="pickerSelect:" destination="icw-Xs-a4p" id="7UA-CW-gEx"/>
+                            </connections>
+                        </picker>
+                        <button width="1" alignment="left" title="Save" id="D8i-wj-nkl">
+                            <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="saveButtonPressed" destination="icw-Xs-a4p" id="MVI-6x-fmK"/>
+                            </connections>
+                        </button>
                     </items>
+                    <connections>
+                        <outlet property="pickerTime" destination="tyy-kh-fOo" id="Nyl-DM-Ceh"/>
+                        <outlet property="savePickerButton" destination="D8i-wj-nkl" id="n0A-CH-kmh"/>
+                    </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="-402" y="-153"/>
+            <point key="canvasLocation" x="468" y="-295"/>
         </scene>
         <!--reminderView-->
         <scene sceneID="JZv-9P-Fgk">
@@ -124,23 +129,16 @@
             <objects>
                 <controller identifier="mainView" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="WatchWash_WatchKit_App" customModuleProvider="target">
                     <items>
-                        <label alignment="center" text="How many Seconds?" id="OIv-MA-pEV"/>
-                        <picker height="80" alignment="left" focusStyle="sequence" id="tyy-kh-fOo">
-                            <connections>
-                                <action selector="pickerSelect:" destination="AgC-eL-Hgc" id="uRc-kJ-gRz"/>
-                            </connections>
-                        </picker>
-                        <button width="1" alignment="left" title="Start Washing!" id="fx4-rk-Frn">
-                            <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <connections>
-                                <segue destination="5Rw-Zn-92U" kind="push" identifier="timerSegue" id="iuh-Sx-FRb"/>
-                            </connections>
-                        </button>
-                        <button width="1" alignment="left" title="Test Notification" id="hnt-QO-G9i">
-                            <connections>
-                                <action selector="testButtonPushed" destination="AgC-eL-Hgc" id="ZCi-d1-Bnx"/>
-                            </connections>
-                        </button>
+                        <group width="130" height="130" alignment="center" verticalAlignment="center" id="hTI-kb-RAk">
+                            <items>
+                                <button width="130" height="130" alignment="left" title="Start Washing!" id="fx4-rk-Frn">
+                                    <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <connections>
+                                        <segue destination="5Rw-Zn-92U" kind="push" identifier="timerSegue" id="iuh-Sx-FRb"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
                     </items>
                     <menu key="menu" id="vQP-lo-bps">
                         <items>
@@ -149,7 +147,7 @@
                                     <action selector="menuReminder" destination="AgC-eL-Hgc" id="Izc-1g-qQa"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Power Wash" image="dollarsign.circle.fill" catalog="system" id="I1u-rE-Df8">
+                            <menuItem title="Settings" image="gear" catalog="system" id="I1u-rE-Df8">
                                 <connections>
                                     <action selector="menuPowerWash" destination="AgC-eL-Hgc" id="ESl-3G-RHZ"/>
                                 </connections>
@@ -157,8 +155,8 @@
                         </items>
                     </menu>
                     <connections>
-                        <outlet property="myPicker" destination="tyy-kh-fOo" id="PP0-T9-1V5"/>
-                        <outlet property="notificationTestButton" destination="hnt-QO-G9i" id="kP4-a5-I0y"/>
+                        <outlet property="buttonGroup" destination="hTI-kb-RAk" id="EFv-la-raZ"/>
+                        <outlet property="startButton" destination="fx4-rk-Frn" id="3Cr-ee-xMJ"/>
                     </connections>
                 </controller>
             </objects>
@@ -195,13 +193,17 @@
                     <items>
                         <group width="126" height="126" alignment="center" verticalAlignment="center" id="2h0-kG-gpR">
                             <items>
-                                <timer alignment="center" verticalAlignment="center" textAlignment="center" format="short" previewedSeconds="20" id="sWe-xZ-cmW">
+                                <timer alignment="center" verticalAlignment="center" textAlignment="center" format="abbreviated" previewedSeconds="20" id="sWe-xZ-cmW">
                                     <fontDescription key="font" style="UICTFontTextStyleTitle2"/>
                                     <calendarUnit key="units" second="YES"/>
                                 </timer>
                             </items>
+                            <variation key="device=watch38mm" height="130" width="130"/>
+                            <variation key="device=watch44mm" height="160" width="160"/>
                         </group>
-                        <label alignment="center" text="test" textAlignment="center" numberOfLines="0" id="UZg-l1-MSg"/>
+                        <label alignment="center" text="test" textAlignment="center" numberOfLines="0" id="UZg-l1-MSg">
+                            <fontDescription key="font" style="UICTFontTextStyleSubhead"/>
+                        </label>
                     </items>
                     <connections>
                         <outlet property="countdownTimer" destination="sWe-xZ-cmW" id="4BO-zO-CUu"/>
@@ -220,7 +222,7 @@
                         <label alignment="center" text="test" textAlignment="center" numberOfLines="0" id="L2m-sk-zBC"/>
                         <group width="126" height="126" alignment="center" verticalAlignment="center" id="3ap-Nz-1bo">
                             <items>
-                                <timer alignment="center" verticalAlignment="center" textAlignment="center" format="short" previewedSeconds="20" id="03E-ma-lKj">
+                                <timer alignment="center" verticalAlignment="center" textAlignment="center" format="abbreviated" previewedSeconds="20" id="03E-ma-lKj">
                                     <fontDescription key="font" style="UICTFontTextStyleTitle2"/>
                                     <calendarUnit key="units" second="YES"/>
                                 </timer>
@@ -261,7 +263,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="dollarsign.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="gear" catalog="system" width="128" height="118"/>
         <image name="list.dash" catalog="system" width="128" height="86"/>
     </resources>
 </document>

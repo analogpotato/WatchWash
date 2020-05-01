@@ -18,7 +18,7 @@ class DoneController: WKInterfaceController {
         WKInterfaceDevice.current().play(.success)
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-            self.pushController(withName: "mainView", context: nil)
+            self.popToRootController()
         }
         
         
