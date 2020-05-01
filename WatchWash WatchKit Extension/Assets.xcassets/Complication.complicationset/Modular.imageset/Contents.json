@@ -1,16 +1,19 @@
 {
   "images" : [
     {
+      "filename" : "bubbles-52.png",
       "idiom" : "watch",
       "scale" : "2x",
       "screen-width" : "<=145"
     },
     {
+      "filename" : "bubbles-58.png",
       "idiom" : "watch",
       "scale" : "2x",
       "screen-width" : ">161"
     },
     {
+      "filename" : "bubbles-59.png",
       "idiom" : "watch",
       "scale" : "2x",
       "screen-width" : ">145"

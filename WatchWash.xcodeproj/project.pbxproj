@@ -12,7 +12,6 @@
 		CF49263D245B7CF400844011 /* SecondTimerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF49263C245B7CF400844011 /* SecondTimerController.swift */; };
 		CF6FFE14245221A900776336 /* DoneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6FFE13245221A900776336 /* DoneController.swift */; };
 		CF6FFE1624522B3500776336 /* ProgressCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6FFE1524522B3500776336 /* ProgressCircle.swift */; };
-		CF72170324561F0A005B4F81 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF72170224561F0A005B4F81 /* CoreData.framework */; };
 		CF72170624561FDF005B4F81 /* NotificationEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF72170424561FDF005B4F81 /* NotificationEntity+CoreDataClass.swift */; };
 		CF72170724561FDF005B4F81 /* NotificationEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF72170524561FDF005B4F81 /* NotificationEntity+CoreDataProperties.swift */; };
 		CF85B702244905BC004F4222 /* AddReminderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF85B701244905BC004F4222 /* AddReminderView.swift */; };
@@ -105,7 +104,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF72170324561F0A005B4F81 /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
