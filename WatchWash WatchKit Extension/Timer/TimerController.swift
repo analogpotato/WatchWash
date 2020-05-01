@@ -30,8 +30,8 @@ class TimerController: WKInterfaceController {
     let sayingsArray = ["Wash those hands!", "Clean up!","","Water time!","Rinse, Repeat!"]
 
     func setTimer() {
-        let timerValue = defaults.object(forKey: "Timer") as? Double
-        intervalValue = timerValue!
+        let timerValue = defaults.object(forKey: "Timer") as? Double ?? 20.0
+        intervalValue = timerValue
         
     }
     
