@@ -7,7 +7,6 @@ Hand washing app specific to the Apple Watch
 - WatchKit
 - Swift
 - UserDefaults
-- Foundation
 - Watchkit Storyboards
 - NotificationCenter
 
