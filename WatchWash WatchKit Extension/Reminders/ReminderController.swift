@@ -70,11 +70,27 @@ class ReminderViewController: WKInterfaceController {
     }
     
     override func table(_ table: WKInterfaceTable, didSelectRowAt rowIndex: Int) {
-    
+        print(reminders[rowIndex])
+        var indexSet = IndexSet()
+        let defaults = UserDefaults.standard
+        
+        
+        indexSet.remove(rowIndex)
+        
+        reminderTable.removeRows(at: indexSet)
+        reminders.remove(at: rowIndex)
+        
+        defaults.set(reminders, forKey: "Notifications")
+        reminderTable.setNumberOfRows(reminders.count, withRowType: "reminderRow")
+        
+        for rowIndex in 0 ..< reminders.count {
+                          set(row: rowIndex, to: reminders[rowIndex])
+                      }
+        
             }
 
 
-    
+ 
     
     override func willActivate() {
         super.willActivate()
