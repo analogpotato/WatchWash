@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="16096" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="16097" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
     <device id="watch44"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -107,10 +107,17 @@
                                 <tableRow identifier="reminderRow" id="Wd5-3H-AUD" customClass="reminderRow" customModule="WatchWash_WatchKit_Extension">
                                     <group key="rootItem" width="1" alignment="left" id="wSa-7P-fW5">
                                         <items>
-                                            <label alignment="center" verticalAlignment="center" text="Time" textAlignment="center" id="G6H-ma-LHe"/>
+                                            <label alignment="left" verticalAlignment="center" text="Time" textAlignment="center" id="G6H-ma-LHe"/>
+                                            <button width="24" height="24" alignment="right" verticalAlignment="center" backgroundImage="trash" catalog="system" id="Vw2-8G-0Jo">
+                                                <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <connections>
+                                                    <action selector="pressDelete" destination="Wd5-3H-AUD" id="5e2-Ng-QRA"/>
+                                                </connections>
+                                            </button>
                                         </items>
                                     </group>
                                     <connections>
+                                        <outlet property="deleteButton" destination="Vw2-8G-0Jo" id="ibX-t7-LCx"/>
                                         <outlet property="reminderLabel" destination="G6H-ma-LHe" id="dKR-cv-mzP"/>
                                     </connections>
                                 </tableRow>
@@ -122,7 +129,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="-64" y="-295"/>
+            <point key="canvasLocation" x="-61" y="-291"/>
         </scene>
         <!--mainView-->
         <scene sceneID="aou-V4-d1y">
@@ -134,6 +141,7 @@
                                 <button width="130" height="130" alignment="left" title="Start Washing!" id="fx4-rk-Frn">
                                     <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <connections>
+                                        <action selector="starButtonPressed" destination="AgC-eL-Hgc" id="E56-uj-waY"/>
                                         <segue destination="5Rw-Zn-92U" kind="push" identifier="timerSegue" id="iuh-Sx-FRb"/>
                                     </connections>
                                 </button>
@@ -201,7 +209,7 @@
                             <variation key="device=watch38mm" height="130" width="130"/>
                             <variation key="device=watch44mm" height="160" width="160"/>
                         </group>
-                        <label alignment="center" text="test" textAlignment="center" numberOfLines="0" id="UZg-l1-MSg">
+                        <label alignment="center" verticalAlignment="bottom" text="test" textAlignment="center" numberOfLines="0" id="UZg-l1-MSg">
                             <fontDescription key="font" style="UICTFontTextStyleSubhead"/>
                         </label>
                     </items>
@@ -219,7 +227,7 @@
             <objects>
                 <controller identifier="secondTimerView" id="T0k-vX-wip" customClass="SecondTimerController" customModule="WatchWash_WatchKit_Extension">
                     <items>
-                        <label alignment="center" text="test" textAlignment="center" numberOfLines="0" id="L2m-sk-zBC"/>
+                        <label alignment="center" verticalAlignment="bottom" text="test" textAlignment="center" numberOfLines="0" id="L2m-sk-zBC"/>
                         <group width="126" height="126" alignment="center" verticalAlignment="center" id="3ap-Nz-1bo">
                             <items>
                                 <timer alignment="center" verticalAlignment="center" textAlignment="center" format="abbreviated" previewedSeconds="20" id="03E-ma-lKj">
@@ -265,5 +273,6 @@
     <resources>
         <image name="gear" catalog="system" width="128" height="118"/>
         <image name="list.dash" catalog="system" width="128" height="86"/>
+        <image name="trash" catalog="system" width="121" height="128"/>
     </resources>
 </document>

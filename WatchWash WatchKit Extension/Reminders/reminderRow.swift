@@ -12,5 +12,12 @@ class reminderRow: NSObject {
 
     @IBOutlet weak var reminderLabel: WKInterfaceLabel!
     
+    @IBOutlet weak var deleteButton: WKInterfaceButton!
+    
+    
+    @IBAction func pressDelete() {
+        print("delete")
+    }
+    
     
 }

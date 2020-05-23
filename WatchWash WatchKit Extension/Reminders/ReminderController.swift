@@ -44,6 +44,9 @@ class ReminderViewController: WKInterfaceController {
                    set(row: rowIndex, to: reminders[rowIndex])
                }
         
+        print(reminders)
+    
+        
         
     }
 
@@ -54,6 +57,7 @@ class ReminderViewController: WKInterfaceController {
         dictionary.keys.forEach { key in
             defaults.removeObject(forKey: key)
         }
+        
     }
 
     
@@ -64,7 +68,14 @@ class ReminderViewController: WKInterfaceController {
         
         row.reminderLabel.setText(text)
     }
+    
+    override func table(_ table: WKInterfaceTable, didSelectRowAt rowIndex: Int) {
+    
+            }
 
+
+    
+    
     override func willActivate() {
         super.willActivate()
         

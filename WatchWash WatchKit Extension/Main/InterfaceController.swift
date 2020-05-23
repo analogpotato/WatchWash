@@ -12,6 +12,8 @@ import Foundation
 
 
 class InterfaceController: WKInterfaceController {
+ 
+    
     
     @IBOutlet weak var myPicker: WKInterfacePicker!
     @IBOutlet weak var selectLabel: WKInterfaceLabel!
@@ -19,7 +21,7 @@ class InterfaceController: WKInterfaceController {
     @IBOutlet weak var buttonGroup: WKInterfaceGroup!
     
 
-    
+
     let notification = NotificationClass()
     
 
@@ -28,9 +30,14 @@ class InterfaceController: WKInterfaceController {
 
         buttonGroup.setCornerRadius(65)
       
-
+        print("I'm awake")
     }
 
+
+    @IBAction func starButtonPressed() {
+
+    }
+    
     
     @IBAction func menuReminder() {
         pushController(withName: "reminderView", context: nil)
@@ -39,6 +46,10 @@ class InterfaceController: WKInterfaceController {
     @IBAction func menuPowerWash() {
        pushController(withName: "settingsView", context: nil)
     }
+    
+    
+
+    
     
     
     
